@@ -14,9 +14,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Gaming Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements"/>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/netherlands_map.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/initialize.js"></script>
 <script type="text/javascript" src="js/tweedeKamer.js"></script>
-
+<script type="text/javascript" src="js/partyOverview.js"></script>
 </head>
 
 <body class="game">
@@ -36,9 +38,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </canvas>
             </div>
             
-            <div id="map-netherlands" class="widget">
+            <div id="map-netherlands-widget" class="widget">
+                <span class="widget-title">Nederland</span>
                 <?php
                     include("netherlands_map.php");
+                ?>
+            </div>
+            
+            <div id="party-overview-widget" class="widget">
+                <span class="widget-title">Partijen</span>
+                <?php
+                    include("party_overview.php");
                 ?>
             </div>
         </div>

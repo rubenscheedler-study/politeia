@@ -29,8 +29,17 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-text-align: center;
+text-align: left;
 background: url("../images/banner.png") 0px 0px no-repeat;
+background-size:cover;
+background-attachment: fixed;
+font-family: Arial;
+-webkit-font-smoothing: antialiased;
+color: #eeeeee;
+
+}
+body.game {
+background: url("../images/main_bg.png") 0px 0px no-repeat;
 background-size:cover;
 background-attachment: fixed;
 }
@@ -47,10 +56,6 @@ src:url(../fonts/Asap-Regular.ttf);
 padding:100px;
 }
 
-.header {
-text-align: center;
-padding-bottom:75px;
-}
 .header h1 img{
 width:7%;
 }
@@ -317,11 +322,67 @@ padding:75px 30px;
 .header h1 {
     font-size: 18px;
 }
-
-
 }
 
+.widget {
+    color: #eeeeee;
+    font-size: 22px;
+    border: 1px solid rgb(68, 68, 68);
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(20, 20, 20, 0.5);
+    display: inline-block;
+    margin: 5px;
+}
 
+.tweede-kamer-widget {
+    float: left;
+    width: 500px;
+    height: 300px;
+}
+#map-netherlands-widget {
+    width: 900px;
+    height: 900px;
+}
 
+.header {
+    height: 50px;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.5);
+}
+#header-list {
+    list-style-type: none;
+}
+#header-list li {
+    float: left;
+    display: inline-block;
+    width: 300px;
+    margin-left: 0;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
 
+.party {
+    width: 500px;
+    display: block;
+}
+.party_value {
+    width: 500px;
+    height: 50px;
+}
+.party_value_name {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    float: left;
+}
+.party_value_bar {
+    width: 300px;
+    height: 50px;
+    color: #eeeeee;
+    font-size: 12px;
+    float: left;
+    display: inline;
+}
 
