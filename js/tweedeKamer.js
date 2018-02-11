@@ -1,22 +1,29 @@
 var ringCount = 6;
-var W = 500;
-var H = 250;
-var seatRadius = 7;
+var W = 300;
+var H = 150;
+var seatRadius = 5;
 var seatCounts = [36,30,30,24,18,12];
 var seatGroupSize = [6,5,5,4,3,2];
 var centerX = W/2;
 var centerY = H;
 var gangPadRatio = 0.2; //amount of arc reserved for gangpad
-
+var ringDistance = 20;
 //
 var partyDevision = [{"Name": "VVD", "SeatCount": 70, "Color": "#ff8800"},{"Name": "CDA", "SeatCount": 50, "Color": "#00dd00"},{"Name": "D66", "SeatCount": 30, "Color": "#008800"}];
 $(function() {
-     renderTweedeKamer();   
+    W = parseInt($("#tweede-kamer")[0].width);
+    H = W/2;
+    seatRadius = Math.floor(H/30);
+    ringDistance = W/15;
+    
+    renderTweedeKamer();   
         
      //define mouse over handler
      $("#tweede-kamer").mousemove(function(e) {
-         var relativeX = e.pageX - $(this).position().left;
-         var relativeY = e.pageY - $(this).position().top;
+         
+         var relativeX = e.pageX - $(this).offset().left;
+         var relativeY = e.pageY - $(this).offset().top;
+
         //check whether the mouseover event is within one of the seats
         var i = 0;
         for (i = 0; i < partyDevision.length; i++) {
@@ -30,11 +37,15 @@ $(function() {
                 //user is mousing over a seat, highlight the party's seats:
                 if (distance < seatRadius) {
                     renderTweedeKamer(partyDevision[i]);
+                    console.log("match");
                     return;
                 }
             }
         }
         renderTweedeKamer();
+     });
+     $("#tweede-kamer").mouseout(function() {
+        renderTweedeKamer(); 
      });
 });
 function resetSeats() {
@@ -61,7 +72,7 @@ function renderTweedeKamer(highlightedParty) {
         var ring;
         for (ring = 0; ring < ringCount; ring++) {
             var seatCount = seatCounts[ring]; //amount of seats in this ring
-            var radius = (W/2)-seatRadius-(ring*30);
+            var radius = (W/2)-seatRadius-(ring*ringDistance);
             var i;
             var extraSpace = 0; //accumulated extra space accounted to gangpad
             //move along imaginary arc line and draw seats

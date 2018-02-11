@@ -6,7 +6,7 @@ $(function(){
         data: {id: 1},
         dataType:'JSON', 
         success: function(response){
-            console.log(response);
+            currentUser = response;
             // put on console what server sent back...
         }
     });

@@ -11,8 +11,6 @@
         public $value;
         public $score;
     }
-
-    echo "TEST";
     
     $host_db = 'localhost';
     $name_db = 'politeia';
