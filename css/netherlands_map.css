@@ -1,0 +1,16 @@
+.provincie {
+    fill: #330033;
+    fill-opacity: 0.5;
+    fill-rule: evenodd;
+    stroke: #880088;
+    stroke-width: 1;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+}
+
+.provincie:hover {
+    fill-opacity: 1;
+}

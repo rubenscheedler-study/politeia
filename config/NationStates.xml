@@ -1,0 +1,4 @@
+<nationstates>
+    <nationstate id="base_crime" name="criminaliteit" min="0" max="100" default="10" unit="percent"></nationstate>
+    <nationstate id="base_crime" name="CO2 uitstoot" min="0" max="100" default="10" unit="percent"></nationstate>
+</nationstates>

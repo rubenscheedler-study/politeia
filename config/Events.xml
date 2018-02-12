@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<events>
+    <event id="base_terror_attack" name="Terroristische Aanslag" description="Er is een terroristische aanslag gepleegd in amsterdam." chance="0.001" image="">
+        <effects>
+            <effect on="base_crime" duration="10">1</effect>
+        </effects>
+        <choices>
+            <choice text="Bombardeer syrie">
+                <effect on="base_crime" duration="10">1</effect>
+            </choice>
+            <choice text="Doe niets">
+            </choice>
+        </choices>
+    </event>
+</events>
