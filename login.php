@@ -8,21 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- REFERENCE FOR LOGIN AND REGISTRATION SYSTEM:
 http://www.c-sharpcorner.com/article/create-a-login-form-validation-using-php-and-wamp-xampp/
 -->
-
-<?php 
-  session_start(); 
-
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "Je moet eerst inloggen.";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: login.php");
-  }
-?>
-
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -39,15 +25,16 @@ http://www.c-sharpcorner.com/article/create-a-login-form-validation-using-php-an
 	<div class="padding-all">
 
 		<div class="design-w3l">
-			<!-- logged in user information -->
-			<?php  if (isset($_SESSION['username'])) : ?>
-				<p>Welkom bij Politeia,
-				<?php
-					echo $_SESSION['username'];
-				?>
-				!</p>
-			<?php endif ?>
-			<p> <a href="login.php?logout='1'" style="color: red;">Log uit</a> </p>
+			<div class="mail-form-agile">
+			<?php include('errors.php'); ?>
+				<form action="login.php" method="post">
+					<input type="text" name="username" placeholder="E-mailadres" required=""/>
+					<input type="password" name="password" class="padding" placeholder="Wachtwoord" required=""/>
+					<input type="submit" name="login_user" value="Inloggen">
+				</form>
+			</div>
+			<p style="color: white">Nog geen account? Registreer <a href="registration.php">hier</a>.</p>
+		  <div class="clear"> </div>
 		</div>
 		
 		<div class="footer">
