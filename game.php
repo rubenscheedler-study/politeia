@@ -21,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="js/popups.js"></script>
 <script type="text/javascript" src="js/tweedeKamer.js"></script>
 <script type="text/javascript" src="js/partyOverview.js"></script>
+<script type="text/javascript" src="js/employees.js"></script>
 </head>
 
 <body class="game">
@@ -83,40 +84,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         
         <div class="popup" id="employees-popup">
             <div class="popup-close">X</div>
-            <p>Informatie over de huidige fractie: ... </p>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    <p>Fractiegrootte:</p>
+                </div>
+                <div class="col-sm-9">
+                    <span id="fractiegrootte"></span>
+                </div>
+            </div>
             <div class="form-group row">
                 <label for="mannetjes" class="col-sm-3 col-form-label">'Mannetjes'</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="mannetjes" placeholder="...">
+                    <input type="text" class="form-control employeeValue" id="mannetjes" placeholder="...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="pr" class="col-sm-3 col-form-label">PR-mensen</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="pr" placeholder="...">
+                    <input type="text" class="form-control employeeValue" id="pr" placeholder="...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="campagnevoerders" class="col-sm-3 col-form-label">Campagnevoerders</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="campagnevoerders" placeholder="...">
+                    <input type="text" class="form-control employeeValue" id="campagnevoerders" placeholder="...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="wettenbouwers" class="col-sm-3 col-form-label">Wettenbouwers</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="wettenbouwers" placeholder="...">
+                    <input type="text" class="form-control employeeValue" id="wettenbouwers" placeholder="...">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="regeringscritici" class="col-sm-3 col-form-label">Regeringscritici</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="regeringscritici" placeholder="...">
+                    <input type="text" class="form-control employeeValue" id="regeringscritici" placeholder="...">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary">Doorvoeren</button>
+                  <button class="btn btn-primary" id="employeesSaveButton">Doorvoeren</button>
                 </div>
               </div>
         </div>
