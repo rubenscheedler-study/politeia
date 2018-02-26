@@ -1,6 +1,7 @@
 $(function() {
     $(".party_value_bar").each(function() {
         var score = parseInt($(this).attr("data-score"));
+        
         $(this).css("width", Math.abs(score));
         if (score < 0) {   //score in [-100,100]
             $(this).css("margin-left", (150+score) + "px");

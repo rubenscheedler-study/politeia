@@ -11,13 +11,9 @@ var ringDistance = 20;
 //
 var partyDevision = [{"Name": "VVD", "SeatCount": 70, "Color": "#ff8800"},{"Name": "CDA", "SeatCount": 50, "Color": "#00dd00"},{"Name": "D66", "SeatCount": 30, "Color": "#008800"}];
 $(function() {
-    W = parseInt($("#tweede-kamer")[0].width);
-    H = W/2;
-    seatRadius = Math.floor(H/30);
-    ringDistance = W/15;
+    configTweedeKamerView();
+    $("#tweede-kamer-widget").change(configTweedeKamerView);
     
-    renderTweedeKamer();   
-        
      //define mouse over handler
      $("#tweede-kamer").mousemove(function(e) {
          
@@ -48,6 +44,18 @@ $(function() {
         renderTweedeKamer(); 
      });
 });
+function configTweedeKamerView() {
+    W = parseInt($("#tweede-kamer")[0].scrollWidth);
+    H = W/2;
+    console.log("config: width:"+W);
+    centerX = W/2;
+    centerY = H;
+    seatRadius = Math.floor(H/30);
+    ringDistance = W/15;
+    
+    renderTweedeKamer();   
+}
+
 function resetSeats() {
     partyDevision.forEach(function(p) { p.Seats = []; });
 }

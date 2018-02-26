@@ -27,35 +27,57 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
+@font-face{
+font-family: "Black-Chancery";
+src:url(../fonts/Black-Chancery.ttf);
+}
 /****-----start-body----****/
 body{
 text-align: left;
 background: url("../images/banner.png") 0px 0px no-repeat;
 background-size:cover;
 background-attachment: fixed;
-font-family: Arial;
+font-family: Black-Chancery;
 -webkit-font-smoothing: antialiased;
-color: #eeeeee;
+color: #fff0bc;
 
 }
 body.game {
-background: url("../images/main_bg.png") 0px 0px no-repeat;
+background: url("../images/old_world_map.jpg") 0px 0px no-repeat;
 background-size:cover;
 background-attachment: fixed;
+overflow: hidden;
+}
+.btn, .btn:active {
+    background-color: #fff0bc;
+    color: #000000;
+    border-color: #ffffff;
+    outline-color: #dd0000;
+}
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #fff0bc;
 }
 
-@font-face{
-font-family: "Audiowide-Regular";
-src:url(../fonts/Audiowide-Regular.ttf);
-}
 @font-face{
 font-family: "Asap-Regular";
 src:url(../fonts/Asap-Regular.ttf);
 }
 .padding-all{
-padding:100px;
+padding-left: 90px;
+padding-right: 50px;
+padding-top: 20px;
 }
-
+#header-logo-list-item {
+    margin-top: -15px;
+}
+#header-logo {
+    width: 200px;
+    height: 50px;
+    background: url(../images/politeia.png) 0px -25px no-repeat;
+    background-size: 180px 90px;
+}
 .header h1 img{
 width:7%;
 }
@@ -65,7 +87,7 @@ font-family: "Asap-Regular";
 }
 .header h1 {
 font-size:50px;
-color: #fff;
+color: #fff0bc;
 font-family: "Audiowide-Regular";
 letter-spacing:3px;
 margin:0 auto;
@@ -325,12 +347,11 @@ padding:75px 30px;
 }
 
 .widget {
-    color: #eeeeee;
-    
+    color: #fff0bc;
     border: 1px solid rgb(68, 68, 68);
     padding: 10px;
     border-radius: 8px;
-    background: rgba(20, 20, 20, 0.5);
+    background: rgba(20, 20, 20, 0.8);
     display: inline-block;
     margin: 5px;
     width: 100%;
@@ -347,11 +368,15 @@ padding:75px 30px;
 #map-netherlands-widget {
     height: 950px;
 }
+#world-map-widget svg {
+    width: 100%;
+    height: auto;
+}
 
 .header {
     height: 50px;
     width: 100%;
-    background: rgba(20, 20, 20, 0.5);
+    background: rgba(20, 20, 20, 0.8);
 }
 #header-list {
     list-style-type: none;
@@ -362,7 +387,7 @@ padding:75px 30px;
     width: 300px;
     margin-left: 0;
     height: 40px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-left: 10px;
 }
 
@@ -403,6 +428,7 @@ padding:75px 30px;
 }
 #next-turn-button {
     float: right;
+    margin-top: -8px;
 }
 /* pop ups */
 #dark-overlay {
@@ -456,4 +482,66 @@ padding:75px 30px;
 
 #fractiegrootte {
     margin-left: 13px;
+}
+
+span.state-name {
+    width: 200px;
+    display: inline-block;
+}
+
+/* side bar */
+.sidebar {
+    position: fixed;
+    width: 80px;
+    z-index: 10;
+    height: 100%;
+}
+.sidebar#left-sidebar {
+    left: 0px;
+    top: 0px;
+}
+.sidebar .item {
+    background: rgba(20,20,20,0.7);
+    width: 76px;
+    height: 76px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: block;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 4px;
+}
+.sidebar .item .icon {
+    width: 100%;
+    height: 100%;
+}
+#sidebar-events {
+    background: url("../images/sidebar_events.png") 13px 13px no-repeat;
+    background-size: 50px 50px;
+}
+#sidebar-tweede-kamer {
+    background: url("../images/sidebar_tweede_kamer.png") 3px 3px no-repeat;
+    background-size: 70px 70px;
+}
+#sidebar-employees{
+    background: url("../images/sidebar_employees.png") 8px 8px no-repeat;
+    background-size: 60px 60px;
+}
+#sidebar-state-of-state {
+    background: url("../images/sidebar_state_of_the_state.png") 13px 13px no-repeat;
+    background-size: 50px 50px;
+}
+
+.sidebar-left-widget {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.sidebar .item:hover {
+    cursor: pointer;
+}
+
+/* side bar tweede kamer */
+#tweede-kamer-widget canvas {
+    width: 100%;
+    height: auto;
 }
